@@ -1,0 +1,72 @@
+<form ng-controller="UfListagemController" ng-init="inicializar()">
+    <div class="container">
+
+        <a href="http://localhost:8080/swagger-ui.html">Swagger API</a>
+        <div style="align-content: center">
+            <h2 align="center">Cadastro de Unidade Federativa</h2>
+        </div>
+        <hr>
+        <form name="myForm" class="form-horizontal">
+            <div class="alert alert-danger" role="alert" ng-if="errorMessage">{{errorMessage}}</div>
+            <div class="alert alert-success" role="alert" ng-if="successMessage">{{successMessage}}</div>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="hidden" ng-model="vm.uf.id" id="id" class="form-control"/>
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" id="nome" ng-model="vm.uf.nome" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="sigla">Sigla</label>
+                        <input type="text" class="form-control" id="sigla" ng-model="vm.uf.sigla" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="dataHora">Data Hora</label>
+                    <input type="date" class="form-control" id="dataHora" ng-model="vm.uf.dataHora" required>
+                </div>
+                <br>
+                <div align="center" class="col-sm-12">
+                    <button type="submit" class="btn btn-success" ng-click="salvar(vm.uf)" ng-disabled="!vm.uf">{{!vm.uf.id ? 'Salvar' : 'Alterar'}}</button>
+                    <button type="reset" ng-click="reset()" class="btn btn-warning">Limpar</button>
+                </div>
+            </div>
+        </form>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="offset-1 col-md-10" style="padding-top: 2em">
+                <div style="align-content: center">
+                    <h3 align="center">Unidades Federativas</h3>
+                </div>
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th><strong>Nome</strong></th>
+                            <th><strong>Sigla</strong></th>
+                            <th><strong>Data/Hora</strong></th>
+                            <th><strong>Ações</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr scope="row" ng-repeat="uf in vm.ufs" ng-show="vm.ufs">
+                            <td class="center" >{{uf.nome}}</td>
+                            <td class="center">{{uf.sigla}}</td>
+                            <td class="center">{{uf.dataHora | date:'dd/MM/yyyy HH:mm:ss '}}</td>
+                            <td>
+                                <button type="button" ng-click="editUf(uf.id)" class="btn btn-success">Editar</button>
+                                <button type="button" ng-click="delete(uf.id)" class="btn btn-danger">Remover</button>
+                            </td>
+                        </tr>
+                        <tr ng-show="!vm.ufs.length">
+                            <td class="center text-center" colspan="9">Nenhuma Unidade Federativa Cadastrada!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</form>

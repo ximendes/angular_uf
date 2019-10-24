@@ -1,0 +1,35 @@
+{
+  "name": "celk-client",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Crud Uf Celk",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/cli": "1.4.9",
+    "@angular/compiler-cli": "^4.4.6",
+    "@angular/core": "^4.0.0",
+    "angular": "^1.7.5",
+    "angular-input-masks": "^4.4.1",
+    "angular-loader": "^1.7.5",
+    "angular-route": "^1.7.5",
+    "angularjs-builder": "^1.1.8",
+    "bootstrap": "^4.3.1",
+    "gulp": "^4.0.2",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.4.9",
+    "@angular/compiler-cli": "^4.4.6",
+    "angular-mocks": "^1.7.5",
+    "cpx": "^1.5.0",
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "postinstall": "npm run copy-libs",
+    "postupdate-deps": "npm run copy-libs",
+    "update-deps": "npm update",
+    "prestart": "npm install",
+    "start": "http-server -a -p 8000 -c-1 ./app",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*,bootstrap/dist,jquery/dist}/**/*\" app/assets/lib -C"
+  }
+}
