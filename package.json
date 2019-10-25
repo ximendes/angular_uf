@@ -31,7 +31,7 @@
     "postupdate-deps": "npm run copy-libs",
     "update-deps": "npm update",
     "prestart": "npm install",
-    "start": "http-server -a -p 8000 -c-1 ./app",
+    "start": "http-server -a -p 3000 -c-1 ./app",
     "copy-libs": "cpx \"node_modules/{angular,angular-*,bootstrap/dist,jquery/dist}/**/*\" app/assets/lib -C"
   }
 }
