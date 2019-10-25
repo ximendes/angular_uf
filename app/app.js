@@ -4,7 +4,7 @@ var app = angular.module('app', ['ngRoute',
                                 'ui.utils.masks']);
 
 app.constant('urls', {
-    USER_SERVICE_API : 'https://app-uf.herokuapp.com/api/uf/'
+    USER_SERVICE_API : 'https://java-app-uf.herokuapp.com/api/uf/'
 });
 
 app.config(['$locationProvider', '$routeProvider', '$httpProvider', function ($locationProvider, $routeProvider, $httpProvider) {
