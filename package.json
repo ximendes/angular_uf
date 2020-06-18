@@ -8,7 +8,7 @@
     "@angular/cli": "1.4.9",
     "@angular/compiler-cli": "^4.4.6",
     "@angular/core": "^4.0.0",
-    "angular": "^1.7.5",
+    "angular": "^1.8.0",
     "angular-input-masks": "^4.4.1",
     "angular-loader": "^1.7.5",
     "angular-route": "^1.7.5",
