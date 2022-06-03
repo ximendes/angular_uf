@@ -7,7 +7,7 @@
   "dependencies": {
     "@angular/cli": "1.4.9",
     "@angular/compiler-cli": "^4.4.6",
-    "@angular/core": "^4.0.0",
+    "@angular/core": "^11.0.5",
     "angular": "^1.7.5",
     "angular-input-masks": "^4.4.1",
     "angular-loader": "^1.7.5",
